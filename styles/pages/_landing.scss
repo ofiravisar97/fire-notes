@@ -1,0 +1,56 @@
+.landing-container {
+  background: var(--gradient);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .landing-card {
+    width: 60%;
+    height: 40%;
+    background-color: var(--light-grey-1);
+    border-radius: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    justify-content: space-evenly;
+  }
+
+  .landing-start__text {
+    margin-top: 2rem;
+    background: linear-gradient(
+      to top left,
+      var(--primary),
+      var(--primary-dark)
+    );
+    font-size: 2.4rem;
+    color: transparent;
+    background-clip: text;
+  }
+
+  .landing-start__btn {
+    background: var(--gradient);
+    background-clip: text padding-box;
+    padding: 0.5rem;
+    transition: background 0.2s ease-in;
+
+    &:hover {
+      background: linear-gradient(
+        to bottom left,
+        var(--primary-light),
+        var(--primary-dark)
+      );
+      transform: translateY(-10%);
+      box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    &__content {
+      color: var(--primary);
+      background: var(--light-grey-1);
+      padding: 1rem;
+      font-size: 2.4rem;
+      font-weight: 700;
+    }
+  }
+}
