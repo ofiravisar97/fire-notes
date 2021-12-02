@@ -1,16 +1,38 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
+import { CSSProperties, useState } from "react";
+import Input from "../src/components/UI/Input";
 
 const Home: NextPage = () => {
-  return <div className="landing-container">
-    <div className="landing-card">
-      <h2 className="landing-start__text">A NEW WAY TO MAKE YOUR NOTES</h2>
-      <div className="landing-start__btn">
-      <button className="landing-start__btn__content">Get Started</button>
-      </div>
+  const [isLogin, setIsLogin] = useState(false);
+  const registerStyles: CSSProperties = {
+    paddingRight: isLogin ? "2rem" : "50%",
+    visibility: isLogin ? "hidden" : "visible",
+  };
+  return (
+    <div className='landing-container'>
+      <form className='landing-card'>
+        <div className='landing-title-left'>LOGIN</div>
+        <div className='landing-title-right' style={registerStyles}>
+          SIGNUP
+        </div>
+        <div className='landing-inputs'>
+          <Input
+            placeholder='Email: '
+            type='email'
+            value={"a"}
+            onChange={(e) => console.log(e)}
+          />
+          <Input
+            placeholder='Password: '
+            type='email'
+            value={"a"}
+            onChange={(e) => console.log(e)}
+          />
+        </div>
+      </form>
     </div>
-  </div>;
+  );
 };
 
 export default Home;
